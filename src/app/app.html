@@ -1,1 +1,255 @@
-<h1>Creating the Future...</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+</head>
+<body>
+<header>
+</header>
+<main>
+    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+        Registration
+    </button>
+    <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="py-8 px-4">
+            <div>
+                <div class="w-full lg:max-w-xl p-6 bg-white rounded-lg shadow-xl dark:bg-gray-800 flex items-start">
+                    <div class="">
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mr-8 mt-8">
+                            Sign in to our platform
+                        </h2>
+                        <form class="mt-8 space-y-6" action="#">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required />
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" aria-describedby="remember" name="remember" type="checkbox" class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" required />
+                                </div>
+                                <div class="ms-3 text-sm">
+                                    <label for="remember" class="font-medium text-gray-500 dark:text-gray-400">Remember me</label>
+                                </div>
+                                <a href="#" class="ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Lost Password?</a>
+                            </div>
+                            <button type="submit" class="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                            <div class="text-sm font-medium text-gray-900 dark:text-white">
+                                Not registered yet? <a class="text-blue-600 hover:underline dark:text-blue-500">Create account</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="rounded-t dark:border-gray-600">
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+        <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                    <div class="w-full md:w-1/2">
+                        <img src="images/logo.svg" alt="logo">
+                    </div>
+
+                    <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <img src="images/addition.svg" alt="addition">
+                            Add Data
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-3">TRANSACTION</th>
+                            <th scope="col" class="px-4 py-3">DATE & TIME</th>
+                            <th scope="col" class="px-4 py-3">AMOUNT</th>
+                            <th scope="col" class="px-4 py-3">STATUS</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$2999</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+                                    Completed
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 20&#34;</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$1499</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+                                    Completed
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPhone 14</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$999</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class=" inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
+                                    Cancelled
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPad Air</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$1199</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="inline-flex items-center rounded bg-purple-200 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-primary-900 dark:text-primary-300">
+                                    In progress
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series S</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$299</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class=" inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
+                                    Cancelled
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">PlayStation 5</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$799</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+                                    Completed
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series X</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$699</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+                                    Completed
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Watch SE</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$399</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="inline-flex items-center rounded bg-purple-200 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-primary-900 dark:text-primary-300">
+                                    In progress
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">NIKON D850</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$599</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="inline-flex items-center rounded bg-purple-200 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-primary-900 dark:text-primary-300">
+                                    In progress
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">Apr 23, 2021</td>
+                            <td class="px-4 py-3 font-bold font-black">$499</td>
+                            <td class="px-4 py-3">
+                                <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
+                                  <span class="inline-flex items-center rounded bg-purple-200 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-primary-900 dark:text-primary-300">
+                                    In progress
+                                  </span>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                    Showing
+                    <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                    of
+                    <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                </span>
+                    <ul class="inline-flex items-stretch -space-x-px">
+                        <li>
+                            <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Previous</span>
+                                <img class="w-5 h-5" aria-hidden="true" src="images/previous.svg" alt="previous">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-current="page" class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Next</span>
+                                <img class="w-5 h-5" aria-hidden="true" src="images/next.svg" alt="next">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p class="text-center">© 2007–2024 ООО «Логнекс»</p>
+</footer>
+</body>
+</html>
