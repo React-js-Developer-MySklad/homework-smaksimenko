@@ -10,14 +10,16 @@ let counterparties = [
 
 class Table {
     #table;
+    #showButton;
     #counterpartiesArr = [];
 
     constructor() {
         this.#table = this.elementFromHtml(html);
         counterparties.forEach(row => {
-            console.log(row.name);
             this.#counterpartiesArr.push(row);
         });
+        this.#showButton = this.#table.querySelector('#show-add-modal');
+        this.#showButton.addEventListener('click', () => modal.clear());
     }
 
     asDOMElement() {
@@ -34,8 +36,12 @@ class Table {
         return this.#counterpartiesArr;
     }
 
+    get showButton() {
+        return this.#showButton;
+    }
+
     addRow(){
-        let row = new Row(modal.name, modal.INN, modal.address, modal.KPP, modal);
+        let row = new Row(modal.name.value, modal.INN.value, modal.address.value, modal.KPP.value);
         if (modal.row == null)
             this.#counterpartiesArr.push(row);
         else
@@ -62,6 +68,6 @@ function clearTable() {
 export function tableRefresh() {
     let tbody = document.getElementById("tbody");
     clearTable();
-    mainTable.counterpartiesArr.values().forEach(row => tbody.appendChild(row.asDOMElement()));
+    mainTable.counterpartiesArr.forEach(row => tbody.appendChild(row.asDOMElement()));
 }
 export default mainTable;

@@ -1,6 +1,7 @@
 import html from './row.html'
 import modal from "../modal";
 import mainTable, {tableRefresh} from "../table";
+import table from "../table";
 
 
 class Row {
@@ -48,12 +49,12 @@ class Row {
     }
 
     openUpdateDataModal(){
-        document.getElementById('show-add-modal').click();
+        table.showButton.click();
         modal.row = this;
-        modal.name = this.#columnName.textContent;
-        modal.INN = this.#columnINN.textContent;
-        modal.KPP = this.#columnKPP.textContent;
-        modal.address = this.#columnAddress.textContent;
+        modal.name.value = this.#columnName.textContent;
+        modal.INN.value = this.#columnINN.textContent;
+        modal.KPP.value = this.#columnKPP.textContent;
+        modal.address.value = this.#columnAddress.textContent;
     }
 }
 

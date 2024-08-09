@@ -5,11 +5,51 @@ class Modal {
     #modal;
     #saveButton;
     #row;
+    #INN;
+    #KPP;
+    #address;
+    #name;
 
     constructor() {
         this.#modal = this.elementFromHtml(html);
         this.#saveButton = this.#modal.querySelector('#save_button');
+        this.#name = this.#modal.querySelector('#name');
+        this.#INN = this.#modal.querySelector('#inn');
+        this.#KPP = this.#modal.querySelector('#kpp');
+        this.#address = this.#modal.querySelector('#address');
+
         this.#saveButton.addEventListener('click', () => mainTable.addRow());
+        this.#INN.addEventListener('keypress', (event) => this.validate(event, 'inn'));
+        this.#KPP.addEventListener('keypress', (event) => this.validate(event, 'kpp'));
+    }
+
+    validate(event, type) {
+        const charCode = event.which || event.keyCode;
+        if (charCode < 48 || charCode > 57) {
+            event.preventDefault();
+            return false;
+        }
+
+        let validateCap;
+        let inputLength;
+        switch (type) {
+            case 'kpp' :
+                validateCap = 9;
+                inputLength = this.#KPP.value.length;
+                break;
+            case 'inn' :
+                validateCap = 11;
+                inputLength = this.#INN.value.length;
+                break;
+            default :
+                inputLength = 0;
+                validateCap = 0;
+        }
+        if (inputLength >= validateCap) {
+            event.preventDefault();
+            return false;
+        }
+        return true;
     }
 
     asDOMElement() {
@@ -22,36 +62,36 @@ class Modal {
         return container.content.firstElementChild;
     }
 
-    get name(){
-        return document.getElementById('name').value;
+    get INN() {
+        return this.#INN;
     }
 
-    get INN(){
-        return document.getElementById('inn').value;
+    set INN(value) {
+        this.#INN = value;
     }
 
-    get KPP(){
-        return document.getElementById('kpp').value;
+    get KPP() {
+        return this.#KPP;
     }
 
-    get address(){
-        return document.getElementById('address').value;
+    set KPP(value) {
+        this.#KPP = value;
     }
 
-    set name(value){
-        document.getElementById('name').value = value;
+    get address() {
+        return this.#address;
     }
 
-    set INN(value){
-        document.getElementById('inn').value = value;
+    set address(value) {
+        this.#address = value;
     }
 
-    set KPP(value){
-        document.getElementById('kpp').value = value;
+    get name() {
+        return this.#name;
     }
 
-    set address(value){
-        document.getElementById('address').value = value;
+    set name(value) {
+        this.#name = value;
     }
 
     set row(row) {
@@ -63,10 +103,12 @@ class Modal {
     }
 
     clear(){
-        this.name = '';
-        this.INN = '';
-        this.KPP = '';
-        this.address = '';
+        if (modal.row == null) {
+            this.name.value = '';
+            this.INN.value = '';
+            this.KPP.value = '';
+            this.address.value = '';
+        }
     }
 }
 
