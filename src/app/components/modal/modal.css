@@ -1,9 +1,0 @@
-#modal_add {
-    width: 80%;
-}
-
-@media (max-width:1000px) {
-    #modal_add {
-        width: 100%;
-    }
-}
