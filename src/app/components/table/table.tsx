@@ -3,40 +3,37 @@ import './table.css'
 import logo from '../../images/logo.svg';
 import addition from '../../images/addition.svg';
 import {Row} from "../row/row";
-import {counterparties, Counterparty} from "../../data";
 import {Modal} from "../modal/modal";
 import {TableNavigation} from "../tableNavigation/tableNavigation";
+import {useCounterpartyContext, Counterparty} from "../../context/CounterpartyContext";
 
 export const Table = () => {
-    const [counterpartiesArray, setCounterparties] = useState(counterparties)
     const initialCounterparty = {
-        id: 0,
+        id: '',
         name: '',
         inn: 0,
         kpp: 0,
         address: ''
     };
     const [counterpartyToUpdate, setCounterpartyToUpdate] = useState<Counterparty>(initialCounterparty)
+    const { counterparties, getCounterparty, addCounterparty, deleteCounterparty, updateCounterparty } = useCounterpartyContext();
 
     const handleAdd = (counterparty: Counterparty) => {
-        setCounterparties((prevCounterparties) => {
-            const existingIndex = prevCounterparties.findIndex((c) => c.id === counterparty.id);
-            if (existingIndex !== -1) {
-                const updatedCounterparties = [...prevCounterparties];
-                updatedCounterparties[existingIndex] = counterparty; // Обновляем существующий контрагент
-                return updatedCounterparties;
-            } else {
-                return [...prevCounterparties, counterparty];
-            }
-        });
+        const existingIndex = counterparties.findIndex((c) => c.id === counterparty.id);
+        if (existingIndex !== -1) {
+            updateCounterparty(counterparty)
+        } else {
+            addCounterparty(counterparty)
+        }
+
     };
 
-    const handleDelete = (id: number) => {
-        setCounterparties(counterpartiesArray.filter(counterparty => counterparty.id !== id));
+    const handleDelete = (id: string) => {
+        deleteCounterparty(id);
     };
 
-    const handleUpdate = (id: number) => {
-        setCounterpartyToUpdate(counterpartiesArray.find(counterparty => counterparty.id === id));
+    const handleUpdate = async (id: string) => {
+        setCounterpartyToUpdate(await getCounterparty(id));
     };
 
     return (
@@ -68,7 +65,7 @@ export const Table = () => {
                                 </tr>
                                 </tbody>
                                 <tbody id="tbody">
-                                {counterpartiesArray.map((counterparty, index) => (
+                                {counterparties.map((counterparty, index) => (
                                     <Row key={index} counterparty={counterparty} onDelete={handleDelete}
                                          onUpdate={handleUpdate}></Row>
                                 ))}

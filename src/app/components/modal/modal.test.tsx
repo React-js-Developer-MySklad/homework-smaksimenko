@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Modal } from './modal';
-import {Counterparty} from "../../data";
+import {Counterparty} from "../../context/CounterpartyContext";
 
 describe('modal', () => {
     let onAddMock: jest.Mock;
@@ -11,7 +11,7 @@ describe('modal', () => {
         onAddMock = jest.fn();
 
         counterpartyMock = {
-            id: 0,
+            id: '',
             name: '',
             inn: 0,
             kpp: 0,
@@ -65,7 +65,7 @@ describe('modal', () => {
         fireEvent.click(getByText(/Принять/i));
 
         expect(onAddMock).toHaveBeenCalledWith({
-            id: expect.any(Number),
+            id: expect.any(String),
             name: 'Тестовая Компания',
             inn: 1234567890,
             kpp: 123456789,
