@@ -13,8 +13,8 @@ describe('modal', () => {
         counterpartyMock = {
             id: '',
             name: '',
-            inn: 0,
-            kpp: 0,
+            inn: '',
+            kpp: '',
             address: ''
         } as Counterparty;
     });
@@ -43,15 +43,19 @@ describe('modal', () => {
         expect(innInput.value).toBe('1234567890');
 
         fireEvent.change(innInput, { target: { value: '12345678901' } });
-        expect(innInput.value).toBe('1234567890');
+        expect(innInput.value).toBe('12345678901');
     });
 
     test('отклонение ввода нечислового значнеия в поле ИНН', () => {
-        const { getByLabelText } = render(<Modal onAdd={onAddMock} counterparty={counterpartyMock}/>);
+        const { getByText, getByLabelText } = render(<Modal onAdd={onAddMock} counterparty={counterpartyMock}/>);
         const innInput = getByLabelText(/ИНН/i) as HTMLInputElement;
 
         fireEvent.change(innInput, { target: { value: 'invalid_inn' } });
-        expect(innInput.value).toBe("0");
+        expect(innInput.value).toBe("invalid_inn");
+
+        fireEvent.click(getByText(/Принять/i));
+
+        expect(onAddMock).not.toHaveBeenCalled();
     });
 
     test('нажатие на кнопку сохраненеия', () => {
@@ -64,13 +68,15 @@ describe('modal', () => {
 
         fireEvent.click(getByText(/Принять/i));
 
-        expect(onAddMock).toHaveBeenCalledWith({
-            id: expect.any(String),
+        expect(onAddMock).toHaveBeenCalledTimes(1);
+
+        const firstCallArgs = onAddMock.mock.calls[0];
+        expect(firstCallArgs[0]).toEqual(expect.objectContaining({
             name: 'Тестовая Компания',
-            inn: 1234567890,
-            kpp: 123456789,
+            inn: '1234567890',
+            kpp: '123456789',
             address: '12345, Москва, Тест',
-        });
+        }));
     });
 
     test('не вызывается onAdd с невалидными значениями', () => {
