@@ -4,8 +4,8 @@ import axios from 'axios';
 export type Counterparty = {
     id: string;
     name: string;
-    inn: number;
-    kpp: number;
+    inn: string;
+    kpp: string;
     address: string;
 };
 

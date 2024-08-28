@@ -5,8 +5,8 @@ import {Counterparty, CounterpartyProvider} from '../../context/CounterpartyCont
 import {Table} from "./table";
 
 const mockCounterparties = [
-    { id: '1', name: 'Test Company', inn: 123456, kpp: 654321, address: '123 Street' },
-    { id: '2', name: 'Another Company', inn: 654321, kpp: 123456, address: '456 Avenue' },
+    { id: '1', name: 'Test Company', inn: '123456333', kpp: '4323333111', address: '123 Street' },
+    { id: '2', name: 'Another Company', inn: '654321233', kpp: '1234562344', address: '456 Avenue' },
 ];
 
 jest.mock('axios', () => ({

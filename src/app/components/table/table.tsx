@@ -11,8 +11,8 @@ export const Table = () => {
     const initialCounterparty = {
         id: '',
         name: '',
-        inn: 0,
-        kpp: 0,
+        inn: '',
+        kpp: '',
         address: ''
     };
     const [counterpartyToUpdate, setCounterpartyToUpdate] = useState<Counterparty>(initialCounterparty)
