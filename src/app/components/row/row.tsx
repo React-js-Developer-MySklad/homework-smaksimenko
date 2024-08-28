@@ -1,14 +1,15 @@
 import React from "react";
 import './row.css'
-import {Counterparty} from "../../data";
+import {useCounterpartyContext, Counterparty} from "../../context/CounterpartyContext";
 
 interface RowProps {
     counterparty: Counterparty;
-    onDelete: (id: number) => void;
-    onUpdate: (id: number) => void;
+    onDelete: (id: string) => void;
+    onUpdate: (id: string) => void;
 }
 
 export const Row: React.FC<RowProps> = ({ counterparty, onDelete, onUpdate }) => {
+    const { getCounterparty } = useCounterpartyContext();
 
     function deleteRow() {
         onDelete(counterparty.id);

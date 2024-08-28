@@ -1,11 +1,13 @@
 import React from "react";
 import {Table} from "./components/table/table";
-import {Modal} from "./components/modal/modal";
 import {Footer} from "./components/footer/footer";
+import {CounterpartyProvider} from "./context/CounterpartyContext";
 
 const App = () => {
     return <>
-        <Table></Table>
+        <CounterpartyProvider>
+            <Table />
+        </CounterpartyProvider>
         <Footer></Footer>
     </>;
 }

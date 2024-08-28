@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Counterparty} from "../../data";
-import {log} from "util";
+import {Counterparty} from "../../context/CounterpartyContext";
 
 type ModalProps = {
     onAdd: (counterparty: Counterparty) => void;
@@ -16,7 +15,6 @@ export const Modal: React.FC<ModalProps> = ({ onAdd, counterparty }) => {
     const [errors, setErrors] = useState<{[key: string]: string}>({});
 
     useEffect(() => {
-        // Инициализируем состояние, если counterparty изменяется
         setId(String(counterparty.id) || '');
         setName(counterparty.name || '');
         setInn(String(counterparty.inn) || '');
@@ -25,7 +23,6 @@ export const Modal: React.FC<ModalProps> = ({ onAdd, counterparty }) => {
     }, [counterparty]);
 
     const generateId = () => {
-        // Используем текущее время и случайное число для уникальности
         return Date.now() + Math.floor(Math.random() * 1000);
     };
 
@@ -76,9 +73,8 @@ export const Modal: React.FC<ModalProps> = ({ onAdd, counterparty }) => {
     const handleOnClick = () => {
         return () => {
             if (validate()) {
-                console.log(id);
                 onAdd({
-                    id: Number(id) === 0 ? generateId() : Number(id),
+                    id: id === '' ? String(generateId()) : id,
                     name,
                     inn: Number(inn),
                     kpp: Number(kpp),
